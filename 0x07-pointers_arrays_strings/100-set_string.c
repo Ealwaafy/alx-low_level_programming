@@ -1,4 +1,4 @@
-#include "coding.h"
+#include "00-main.c"
 
 /**
  * set_string - function with two arguments
