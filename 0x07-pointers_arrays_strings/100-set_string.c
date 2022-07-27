@@ -1,14 +1,42 @@
-#include "00-main.c"
+#include "main.h"
 
 /**
- * set_string - function with two arguments
- * @s: pointer to string
- * @to: pointer to string
- *
- * Description: set value of a pointer to a char
- * Return: na
+ * _strstr - locates a substring
+ * @haystack: string we're searching in.
+ * @needle: string used for search
+ * Return: pointer to substring or NULL
  */
-void set_string(char **s, char *to)
+char *_strstr(char *haystack, char *needle)
 {
-	*s = to;
+	int a = 0, b = 0, d;
+
+	/* loops until haystack is 0 */
+	while (haystack[a] != 0)
+	{
+		/* loops until needle is 0 */
+		d = a;
+		while (needle[b] != 0)
+		{
+			/* stop if needle is not found in haystack */
+			if (haystack[d] != needle[b])
+			{
+				break;
+			}
+			d++;
+			b++;
+		}
+
+		if (needle[b] == 0)
+		{
+			return ((char *) haystack + a);
+		}
+
+		else
+		{
+			a++;
+			b = 0;
+		}
+	}
+	/* if haystack is not found it returns 0 */
+	return (0);
 }
