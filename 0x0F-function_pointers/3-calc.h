@@ -1,17 +1,14 @@
-#ifndef CALC_H
-#define CALC_H
-
-/*
- * File: 3-calc.h
- * Auth: Ealwafy
- * Desc: Header file containing all structures and
- *       prototypes used by the 3-main.c program.
- */
-
+#ifndef CALCULATOR
+#define CALCULATOR
+#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 /**
- * struct op - A struct op.
- * @op: The operator.
- * @f: The associated function.
+ * struct op - Struct op
+ *
+ * @op: The operator
+ * @f: The function associated
  */
 typedef struct op
 {
@@ -25,5 +22,4 @@ int op_mul(int a, int b);
 int op_div(int a, int b);
 int op_mod(int a, int b);
 int (*get_op_func(char *s))(int, int);
-
 #endif
